@@ -27,7 +27,7 @@ pipeline {
 
                     for (service in services) {
                         sh """
-                        docker build -t ${DOCKER_PATH}/${service}:latest ${service}
+                        docker build -t ${DOCKERHUB_USER}/${service}:latest ${DOCKER_PATH}/${service}
                         """
                     }
                 }
