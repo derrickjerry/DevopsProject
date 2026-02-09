@@ -8,6 +8,7 @@ pipeline {
 
     environment {
         DOCKERHUB_USER = "derrikjerry"
+        DOCKER_PATH = "weather-app-python"
         
     }
 
@@ -26,7 +27,7 @@ pipeline {
 
                     for (service in services) {
                         sh """
-                        docker build -t ${DOCKERHUB_USER}/${service}:latest ${service}
+                        docker build -t ${DOCKER_PATH}/${service}:latest ${service}
                         """
                     }
                 }
